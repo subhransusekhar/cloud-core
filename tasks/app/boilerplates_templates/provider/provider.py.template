@@ -1,0 +1,700 @@
+# encoding: utf-8
+# pylint: disable=no-self-use
+"""
+{{ provider_name }} provider setup.
+"""
+
+from datetime import datetime, timedelta
+import functools
+import logging
+import types
+from flask_login import current_user
+from flask_restplus_patched import Resource
+from flask_restplus_patched._http import HTTPStatus
+from app.extensions.api import Namespace, abort
+import sqlalchemy
+import os
+from app.extensions import api, db
+
+log = logging.getLogger(__name__)
+
+class {{ provider_class }}(object):
+    def __init__(self, app=None):
+        if app:
+            self.init_app(app)
+
+    def init_app(self, app):
+
+        return self
+        
+    def connect(self, provider):
+        conn = None
+        try:
+            pass
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+        return conn
+    def create_provider(self, provider):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+
+    def get_flavors(self, provider):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+
+    def create_server(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+
+
+    def update_server(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def list_servers(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def get_server(self, provider, name_or_id, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def get_server_by_id(self, provider, server_id, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def delete_server(self, provider, name_or_id, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def server_action(self, provider, name_or_id, action, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+
+    def get_server_console(self, provider, name_or_id, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def get_server_console_url(self, provider, name_or_id, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def list_images(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def list_flavors(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def create_image_snapshot(self, provider, name, server, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def delete_image(self, provider, name, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def list_networks(self, provider, external=False, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def create_network(self, provider, name, project_id, external=False, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def delete_network(self, provider, name, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def create_subnet(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def delete_subnet(self, provider, name, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def create_router(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def delete_router(self, provider, name, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def create_security_group(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def delete_security_group(self, provider, name, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def get_security_group_by_id(self, provider, name, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def create_security_group_rule(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def delete_security_group_rule(self, provider, name, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def create_project(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def create_volume(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def get_volume(self, provider, volume_id, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def delete_volume(self, provider, volume_id, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def list_volume_snapshots(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def create_volume_snapshot(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def get_volume_snapshot_by_id(self, provider, volume_id, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def delete_volume_snapshot(self, provider, volume_id, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def attach_volume(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def detach_volume(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def get_limits(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def create_load_balancer(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def create_bucket(self, provider, name, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def list_buckets(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def create_object(self, provider, bucket, name, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def list_objects(self, provider, bucket, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def get_object(self, provider, bucket, name, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def update_object(self, provider, bucket, name, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def delete_object(self, provider, bucket, name, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def create_server_group(self, provider,  **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def update_server_group(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def delete_server_group(self, provider, name_or_id, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+        
+    def set_server_metadata(self, provider, name_or_id, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def delete_server_metadata(self, provider, name_or_id, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def add_network_to_server(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def remove_network_to_server(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def create_network_port(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def get_stack_details(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+    def add_interface_to_router(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+
+    def get_router(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+
+    def attach_security_groups(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
+
+    def detach_security_groups(self, provider, **kwargs):
+        try:
+            conn = self.connect(provider)
+        except Exception as e:
+            log.info("Exception: %s", e)
+            abort(
+                code=HTTPStatus.UNPROCESSABLE_ENTITY,
+                message="%s" % e
+            )
+        finally:
+            pass
